@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>List Data</title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+		<ul class="nav navbar-nav">
+			<li class="nav-item"><%= link_to 'Home', articles_path, class: 'btn btn-lg btn-primary' %></li>
+			<li class="nav-item"><%= link_to 'Add Data', new_article_path, class: 'btn btn-lg btn-warning' %></li>
+			<li class="nav-item"><%= link_to 'User', new_user_path, class: 'btn btn-lg btn-info' %></li>
+			
+			
+		</ul>
+</nav>
+<div class="container">
+	<div class="content-wrapper">
+		<section class="content">
+			<div class="row">
+				<div class="col-md-12">
+					<!-- CONTENT HERE -->
+				      <%= yield :list %>
+				      <!-- END OF CONTENT -->
+
+					 <h2>Selamat Datang</h2>
+				      
+
+				      <!-- Data Artikel -->
+				      <table class="table table-striped">
+				      	<thead>
+				      		<tr>
+				      			<th>Username</th>
+				      			<th>Email</th>
+				      			<th>Password</th>
+				      			<th>Action</th>
+				      		</tr>
+				      	</thead>
+				      	<tbody>
+				      		<% @user.each do |user| %>
+				      		<tr>
+				      			<td><%= article.username %></td>
+				      			<td><%= article.email %></td>
+				      			<td><%= article.password %></td>
+				      			<td></td>
+	   				       <% end %>
+				      		</tr>
+				      	</tbody>
+				      </table>
+				      
+				      	
+				     
+				</div>
+			</div>
+		</section>
+	</div>
+</div>
+	
+  
+</body>
+</html>
